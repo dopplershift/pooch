@@ -287,7 +287,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="compatibility.html">
-   Compatibility notes
+   Version compatibility
   </a>
  </li>
  <li class="toctree-l1">
@@ -313,21 +313,21 @@
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference external" href="http://contact.fatiando.org">
+  <a class="reference external" href="https://www.fatiando.org/contact/">
    Join the community
    <i class="fas fa-external-link-alt">
    </i>
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference external" href="https://github.com/fatiando/pooch/blob/master/CODE_OF_CONDUCT.md">
+  <a class="reference external" href="https://github.com/fatiando/community/blob/main/CODE_OF_CONDUCT.md">
    Code of Conduct
    <i class="fas fa-external-link-alt">
    </i>
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference external" href="https://github.com/fatiando/pooch/blob/master/CONTRIBUTING.md">
+  <a class="reference external" href="https://github.com/fatiando/pooch/blob/main/CONTRIBUTING.md">
    How to contribute
    <i class="fas fa-external-link-alt">
    </i>
@@ -341,7 +341,7 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference external" href="https://github.com/fatiando/pooch/blob/master/AUTHORS.md">
+  <a class="reference external" href="https://github.com/fatiando/pooch/blob/main/AUTHORS.md">
    Authors
    <i class="fas fa-external-link-alt">
    </i>
@@ -417,7 +417,7 @@
             href="https://github.com/fatiando/pooch/issues/new?title=Issue%20on%20page%20%2Fprotocols.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/fatiando/pooch/edit/master/doc/protocols.rst"><button
+        <a class="edit-button" href="https://github.com/fatiando/pooch/edit/main/doc/protocols.rst"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -479,7 +479,7 @@ following setup:</p>
     <span class="c1"># Use an FTP server instead of HTTP. The rest is all the same.</span>
     <span class="n">base_url</span><span class="o">=</span><span class="s2">&quot;ftp://garage-basement.org/</span><span class="si">{version}</span><span class="s2">/&quot;</span><span class="p">,</span>
     <span class="n">version</span><span class="o">=</span><span class="n">version</span><span class="p">,</span>
-    <span class="n">version_dev</span><span class="o">=</span><span class="s2">&quot;master&quot;</span><span class="p">,</span>
+    <span class="n">version_dev</span><span class="o">=</span><span class="s2">&quot;main&quot;</span><span class="p">,</span>
     <span class="n">registry</span><span class="o">=</span><span class="p">{</span>
         <span class="s2">&quot;c137.csv&quot;</span><span class="p">:</span> <span class="s2">&quot;19uheidhlkjdwhoiwuhc0uhcwljchw9ochwochw89dcgw9dcgwc&quot;</span><span class="p">,</span>
         <span class="s2">&quot;cronen.csv&quot;</span><span class="p">:</span> <span class="s2">&quot;1upodh2ioduhw9celdjhlfvhksgdwikdgcowjhcwoduchowjg8w&quot;</span><span class="p">,</span>
@@ -541,6 +541,14 @@ figshare dataset:</p>
     <span class="k">return</span> <span class="n">data</span>
 </pre></div>
 </div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>A figshare DOI must point to a figshare <em>dataset</em>, not a figshare
+<em>collection</em>. Collection DOIs have a <code class="docutils literal notranslate"><span class="pre">.c.</span></code> in them, e.g.
+<code class="docutils literal notranslate"><span class="pre">doi:10.6084/m9.figshare.c.4362224.v1</span></code>. Attempting to download files
+from a figshare collection will raise an error.
+See <a class="reference external" href="https://github.com/fatiando/pooch/issues/274">issue #274</a> details.</p>
+</div>
 </div>
 </div>
 
@@ -561,8 +569,8 @@ figshare dataset:</p>
     <div class="container">
       <p>
         
-            &copy; Copyright 2021, The Pooch Developers.<br/>
-          Last updated on Oct 11, 2021.<br/>
+            &copy; Copyright 2022, The Pooch Developers.<br/>
+          Last updated on Jan 10, 2022.<br/>
       </p>
     </div>
   </footer>

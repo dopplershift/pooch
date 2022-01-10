@@ -287,7 +287,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="compatibility.html">
-   Compatibility notes
+   Version compatibility
   </a>
  </li>
  <li class="toctree-l1">
@@ -313,21 +313,21 @@
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference external" href="http://contact.fatiando.org">
+  <a class="reference external" href="https://www.fatiando.org/contact/">
    Join the community
    <i class="fas fa-external-link-alt">
    </i>
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference external" href="https://github.com/fatiando/pooch/blob/master/CODE_OF_CONDUCT.md">
+  <a class="reference external" href="https://github.com/fatiando/community/blob/main/CODE_OF_CONDUCT.md">
    Code of Conduct
    <i class="fas fa-external-link-alt">
    </i>
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference external" href="https://github.com/fatiando/pooch/blob/master/CONTRIBUTING.md">
+  <a class="reference external" href="https://github.com/fatiando/pooch/blob/main/CONTRIBUTING.md">
    How to contribute
    <i class="fas fa-external-link-alt">
    </i>
@@ -341,7 +341,7 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference external" href="https://github.com/fatiando/pooch/blob/master/AUTHORS.md">
+  <a class="reference external" href="https://github.com/fatiando/pooch/blob/main/AUTHORS.md">
    Authors
    <i class="fas fa-external-link-alt">
    </i>
@@ -417,7 +417,7 @@
             href="https://github.com/fatiando/pooch/issues/new?title=Issue%20on%20page%20%2Finstall.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/fatiando/pooch/edit/master/doc/install.rst"><button
+        <a class="edit-button" href="https://github.com/fatiando/pooch/edit/main/doc/install.rst"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -449,11 +449,6 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   Installing
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#dependencies">
    Dependencies
   </a>
@@ -472,29 +467,18 @@
                 
   <div class="section" id="installing">
 <span id="install"></span><h1>Installing<a class="headerlink" href="#installing" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="which-python">
-<h2>Which Python?<a class="headerlink" href="#which-python" title="Permalink to this headline">¶</a></h2>
-<p>You’ll need <strong>Python &gt;= 3.6</strong> (see <a class="reference internal" href="compatibility.html#python-versions"><span class="std std-ref">Python version compatibility</span></a> if you
-require support for older versions).</p>
-<p>We recommend using the
-<a class="reference external" href="https://www.anaconda.com/download">Anaconda</a>
-or <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a>
-Python distributions to ensure you have all dependencies installed and the
-<code class="docutils literal notranslate"><span class="pre">conda</span></code> package manager available.
-Installing Anaconda does not require administrative rights to your computer and
-doesn’t interfere with any other Python installations in your system.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The commands below should be executed in a terminal. On Windows, use the
-“Anaconda Prompt” app or <code class="docutils literal notranslate"><span class="pre">cmd.exe</span></code> if you’re not using Anaconda.</p>
-</div>
-</div>
-<div class="section" id="id1">
-<h2>Installing<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>There are different ways to install Pooch:</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="b19f2ae5-8451-4db3-b0d6-654486a55061" name="2ddd66de-b9b2-4a5d-a8e9-5a9355bfb4f2" type="radio">
-</input><label class="tabbed-label" for="b19f2ae5-8451-4db3-b0d6-654486a55061">
+<input checked="checked" id="bc19e7c3-af21-4db2-8ed8-07e97ded84df" name="9577a3a2-28c9-466c-9d7d-99cb621f2c16" type="radio">
+</input><label class="tabbed-label" for="bc19e7c3-af21-4db2-8ed8-07e97ded84df">
+pip</label><div class="tabbed-content docutils">
+<p>Using the <a class="reference external" href="https://pypi.org/project/pip/">pip</a> package manager:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python -m pip install pooch
+</pre></div>
+</div>
+</div>
+<input id="b633ef19-f013-44df-b892-794ab52ed517" name="9577a3a2-28c9-466c-9d7d-99cb621f2c16" type="radio">
+</input><label class="tabbed-label" for="b633ef19-f013-44df-b892-794ab52ed517">
 conda</label><div class="tabbed-content docutils">
 <p>Using the <a class="reference external" href="https://conda.io/">conda</a> package manager that comes with the
 Anaconda/Miniconda distribution:</p>
@@ -502,34 +486,36 @@ Anaconda/Miniconda distribution:</p>
 </pre></div>
 </div>
 </div>
-<input id="d5b34f65-38be-4f0b-a4ac-7dd28eb70720" name="2ddd66de-b9b2-4a5d-a8e9-5a9355bfb4f2" type="radio">
-</input><label class="tabbed-label" for="d5b34f65-38be-4f0b-a4ac-7dd28eb70720">
-pip</label><div class="tabbed-content docutils">
-<p>Using the <a class="reference external" href="https://pypi.org/project/pip/">pip</a> package manager:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python -m pip install pooch
-</pre></div>
-</div>
-</div>
-<input id="7dbbe2db-95d4-4f0b-bb63-9143dd8e392f" name="2ddd66de-b9b2-4a5d-a8e9-5a9355bfb4f2" type="radio">
-</input><label class="tabbed-label" for="7dbbe2db-95d4-4f0b-bb63-9143dd8e392f">
+<input id="7971a8ea-70c4-4af0-9919-a556cc6aa9a9" name="9577a3a2-28c9-466c-9d7d-99cb621f2c16" type="radio">
+</input><label class="tabbed-label" for="7971a8ea-70c4-4af0-9919-a556cc6aa9a9">
 Development version</label><div class="tabbed-content docutils">
-<p>Using <code class="docutils literal notranslate"><span class="pre">pip</span></code> to install the latest <strong>unreleased</strong> version from GitHub:</p>
+<p>Using <code class="docutils literal notranslate"><span class="pre">pip</span></code> to install the latest <strong>unreleased</strong> version from GitHub
+(<strong>not recommended</strong> in most situations):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python -m pip install --upgrade git+https://github.com/fatiando/pooch
 </pre></div>
 </div>
 </div>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The commands above should be executed in a terminal. On Windows, use the
+<code class="docutils literal notranslate"><span class="pre">cmd.exe</span></code> or the “Anaconda Prompt” app if you’re using Anaconda.</p>
+</div>
+<div class="section" id="which-python">
+<h2>Which Python?<a class="headerlink" href="#which-python" title="Permalink to this headline">¶</a></h2>
+<p>You’ll need <strong>Python &gt;= 3.6</strong>. See <a class="reference internal" href="compatibility.html#python-versions"><span class="std std-ref">Supported Python versions</span></a> if you
+require support for older versions.</p>
 </div>
 <div class="section" id="dependencies">
-<span id="id2"></span><h2>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h2>
+<span id="id1"></span><h2>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h2>
 <p>The required dependencies should be installed automatically when you install
 Pooch using <code class="docutils literal notranslate"><span class="pre">conda</span></code> or <code class="docutils literal notranslate"><span class="pre">pip</span></code>. Optional dependencies have to be installed
 manually.</p>
 <p>Required:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="http://docs.python-requests.org/">requests</a></p></li>
-<li><p><a class="reference external" href="https://github.com/pypa/packaging">packaging</a></p></li>
 <li><p><a class="reference external" href="https://github.com/ActiveState/appdirs">appdirs</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pypa/packaging">packaging</a></p></li>
+<li><p><a class="reference external" href="https://docs.python-requests.org/">requests</a></p></li>
 </ul>
 <p>Optional:</p>
 <ul class="simple">
@@ -537,6 +523,8 @@ manually.</p>
 progress bar. See <a class="reference internal" href="progressbars.html#progressbars"><span class="std std-ref">Printing progress bars</span></a>.</p></li>
 <li><p><a class="reference external" href="https://github.com/paramiko/paramiko">paramiko</a>: For SFTP downloads. See
 <a class="reference internal" href="api/generated/pooch.SFTPDownloader.html#pooch.SFTPDownloader" title="pooch.SFTPDownloader"><code class="xref py py-class docutils literal notranslate"><span class="pre">pooch.SFTPDownloader</span></code></a>.</p></li>
+<li><p><a class="reference external" href="https://github.com/ifduyue/python-xxhash">xxhash</a>: For the faster xxHash
+algorithms. See <a class="reference internal" href="hashes.html#hashes-other"><span class="std std-ref">Other supported hashes</span></a>.</p></li>
 </ul>
 </div>
 </div>
@@ -558,8 +546,8 @@ progress bar. See <a class="reference internal" href="progressbars.html#progress
     <div class="container">
       <p>
         
-            &copy; Copyright 2021, The Pooch Developers.<br/>
-          Last updated on Oct 11, 2021.<br/>
+            &copy; Copyright 2022, The Pooch Developers.<br/>
+          Last updated on Jan 10, 2022.<br/>
       </p>
     </div>
   </footer>

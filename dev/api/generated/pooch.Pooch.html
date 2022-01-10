@@ -287,7 +287,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../../compatibility.html">
-   Compatibility notes
+   Version compatibility
   </a>
  </li>
  <li class="toctree-l1">
@@ -313,21 +313,21 @@
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference external" href="http://contact.fatiando.org">
+  <a class="reference external" href="https://www.fatiando.org/contact/">
    Join the community
    <i class="fas fa-external-link-alt">
    </i>
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference external" href="https://github.com/fatiando/pooch/blob/master/CODE_OF_CONDUCT.md">
+  <a class="reference external" href="https://github.com/fatiando/community/blob/main/CODE_OF_CONDUCT.md">
    Code of Conduct
    <i class="fas fa-external-link-alt">
    </i>
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference external" href="https://github.com/fatiando/pooch/blob/master/CONTRIBUTING.md">
+  <a class="reference external" href="https://github.com/fatiando/pooch/blob/main/CONTRIBUTING.md">
    How to contribute
    <i class="fas fa-external-link-alt">
    </i>
@@ -341,7 +341,7 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference external" href="https://github.com/fatiando/pooch/blob/master/AUTHORS.md">
+  <a class="reference external" href="https://github.com/fatiando/pooch/blob/main/AUTHORS.md">
    Authors
    <i class="fas fa-external-link-alt">
    </i>
@@ -417,7 +417,7 @@
             href="https://github.com/fatiando/pooch/issues/new?title=Issue%20on%20page%20%2Fapi/generated/pooch.Pooch.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/fatiando/pooch/edit/master/doc/api/generated/pooch.Pooch.rst"><button
+        <a class="edit-button" href="https://github.com/fatiando/pooch/edit/main/doc/api/generated/pooch.Pooch.rst"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -485,7 +485,7 @@ until a maximum of 10s.</p></li>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pooch.Pooch.fetch" title="pooch.Pooch.fetch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Pooch.fetch</span></code></a>(fname[, processor, downloader])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pooch.Pooch.fetch" title="pooch.Pooch.fetch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Pooch.fetch</span></code></a>(fname[, processor, downloader, …])</p></td>
 <td><p>Get the absolute path to a file in the local storage.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#pooch.Pooch.get_url" title="pooch.Pooch.get_url"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Pooch.get_url</span></code></a>(fname)</p></td>
@@ -504,7 +504,7 @@ until a maximum of 10s.</p></li>
 <hr class="docutils" />
 <dl class="py method">
 <dt id="pooch.Pooch.fetch">
-<code class="sig-prename descclassname"><span class="pre">Pooch.</span></code><code class="sig-name descname"><span class="pre">fetch</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">processor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">downloader</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pooch/core.html#Pooch.fetch"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pooch.Pooch.fetch" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">Pooch.</span></code><code class="sig-name descname"><span class="pre">fetch</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">processor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">downloader</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">progressbar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pooch/core.html#Pooch.fetch"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pooch.Pooch.fetch" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the absolute path to a file in the local storage.</p>
 <p>If it’s not in the local storage, it will be downloaded. If the hash of
 the file in local storage doesn’t match the one in the registry, will
@@ -535,6 +535,10 @@ downloaded. See <a class="reference internal" href="../../processors.html#proces
 <li><p><strong>downloader</strong> (<a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><em>None</em></a><em> or </em><em>callable</em>) – If not None, then a function (or callable object) that will be
 called to download a given URL to a provided local file name. See
 <a class="reference internal" href="../../downloaders.html#downloaders"><span class="std std-ref">Downloaders: Customizing the download</span></a> for details.</p></li>
+<li><p><strong>progressbar</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><em>bool</em></a><em> or </em><em>an arbitrary progress bar object</em>) – If True, will print a progress bar of the download to standard
+error (stderr). Requires <a class="reference external" href="https://github.com/tqdm/tqdm">tqdm</a> to
+be installed. Alternatively, an arbitrary progress bar object can
+be passed. See <a class="reference internal" href="../../progressbars.html#custom-progressbar"><span class="std std-ref">Using custom progress bars</span></a> for details.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -610,8 +614,8 @@ can be added and must be prepended with <code class="docutils literal notranslat
     <div class="container">
       <p>
         
-            &copy; Copyright 2021, The Pooch Developers.<br/>
-          Last updated on Oct 11, 2021.<br/>
+            &copy; Copyright 2022, The Pooch Developers.<br/>
+          Last updated on Jan 10, 2022.<br/>
       </p>
     </div>
   </footer>

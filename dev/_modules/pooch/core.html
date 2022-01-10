@@ -285,7 +285,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../../compatibility.html">
-   Compatibility notes
+   Version compatibility
   </a>
  </li>
  <li class="toctree-l1">
@@ -311,21 +311,21 @@
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference external" href="http://contact.fatiando.org">
+  <a class="reference external" href="https://www.fatiando.org/contact/">
    Join the community
    <i class="fas fa-external-link-alt">
    </i>
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference external" href="https://github.com/fatiando/pooch/blob/master/CODE_OF_CONDUCT.md">
+  <a class="reference external" href="https://github.com/fatiando/community/blob/main/CODE_OF_CONDUCT.md">
    Code of Conduct
    <i class="fas fa-external-link-alt">
    </i>
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference external" href="https://github.com/fatiando/pooch/blob/master/CONTRIBUTING.md">
+  <a class="reference external" href="https://github.com/fatiando/pooch/blob/main/CONTRIBUTING.md">
    How to contribute
    <i class="fas fa-external-link-alt">
    </i>
@@ -339,7 +339,7 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference external" href="https://github.com/fatiando/pooch/blob/master/AUTHORS.md">
+  <a class="reference external" href="https://github.com/fatiando/pooch/blob/main/AUTHORS.md">
    Authors
    <i class="fas fa-external-link-alt">
    </i>
@@ -458,7 +458,15 @@
 <span class="kn">from</span> <span class="nn">.downloaders</span> <span class="kn">import</span> <span class="n">choose_downloader</span>
 
 
-<div class="viewcode-block" id="retrieve"><a class="viewcode-back" href="../../api/generated/pooch.retrieve.html#pooch.retrieve">[docs]</a><span class="k">def</span> <span class="nf">retrieve</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">known_hash</span><span class="p">,</span> <span class="n">fname</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">processor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">downloader</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="retrieve"><a class="viewcode-back" href="../../api/generated/pooch.retrieve.html#pooch.retrieve">[docs]</a><span class="k">def</span> <span class="nf">retrieve</span><span class="p">(</span>
+    <span class="n">url</span><span class="p">,</span>
+    <span class="n">known_hash</span><span class="p">,</span>
+    <span class="n">fname</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">processor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">downloader</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">progressbar</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Download and cache a single file locally.</span>
 
@@ -524,6 +532,11 @@
 <span class="sd">        If not None, then a function (or callable object) that will be called</span>
 <span class="sd">        to download a given URL to a provided local file name. See</span>
 <span class="sd">        :ref:`downloaders` for details.</span>
+<span class="sd">    progressbar : bool or an arbitrary progress bar object</span>
+<span class="sd">        If True, will print a progress bar of the download to standard error</span>
+<span class="sd">        (stderr). Requires `tqdm &lt;https://github.com/tqdm/tqdm&gt;`__ to be</span>
+<span class="sd">        installed. Alternatively, an arbitrary progress bar object can be</span>
+<span class="sd">        passed. See :ref:`custom-progressbar` for details.</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
@@ -540,7 +553,7 @@
 <span class="sd">    &gt;&gt;&gt; from pooch import __version__, check_version, retrieve</span>
 <span class="sd">    &gt;&gt;&gt; # Make a URL for the version of pooch we have installed</span>
 <span class="sd">    &gt;&gt;&gt; url = &quot;https://github.com/fatiando/pooch/raw/{}/data/tiny-data.txt&quot;</span>
-<span class="sd">    &gt;&gt;&gt; url = url.format(check_version(__version__))</span>
+<span class="sd">    &gt;&gt;&gt; url = url.format(check_version(__version__, fallback=&quot;main&quot;))</span>
 <span class="sd">    &gt;&gt;&gt; # Download the file and save it locally. Will check the MD5 checksum of</span>
 <span class="sd">    &gt;&gt;&gt; # the downloaded file against the given value to make sure it&#39;s the</span>
 <span class="sd">    &gt;&gt;&gt; # right file. You can use other hashes by specifying different</span>
@@ -568,7 +581,7 @@
 <span class="sd">    &gt;&gt;&gt; # URLs to a gzip compressed version of the data file.</span>
 <span class="sd">    &gt;&gt;&gt; url = (&quot;https://github.com/fatiando/pooch/raw/{}/&quot;</span>
 <span class="sd">    ...        + &quot;pooch/tests/data/tiny-data.txt.gz&quot;)</span>
-<span class="sd">    &gt;&gt;&gt; url = url.format(check_version(__version__))</span>
+<span class="sd">    &gt;&gt;&gt; url = url.format(check_version(__version__, fallback=&quot;main&quot;))</span>
 <span class="sd">    &gt;&gt;&gt; # By default, you would have to decompress the file yourself</span>
 <span class="sd">    &gt;&gt;&gt; fname = retrieve(</span>
 <span class="sd">    ...     url,</span>
@@ -600,7 +613,7 @@
 <span class="sd">    &gt;&gt;&gt; # URLs to a zip archive with a single data file.</span>
 <span class="sd">    &gt;&gt;&gt; url = (&quot;https://github.com/fatiando/pooch/raw/{}/&quot;</span>
 <span class="sd">    ...        + &quot;pooch/tests/data/tiny-data.zip&quot;)</span>
-<span class="sd">    &gt;&gt;&gt; url = url.format(check_version(__version__))</span>
+<span class="sd">    &gt;&gt;&gt; url = url.format(check_version(__version__, fallback=&quot;main&quot;))</span>
 <span class="sd">    &gt;&gt;&gt; # By default, you would get the path to the archive</span>
 <span class="sd">    &gt;&gt;&gt; fname = retrieve(</span>
 <span class="sd">    ...     url,</span>
@@ -649,7 +662,7 @@
         <span class="p">)</span>
 
         <span class="k">if</span> <span class="n">downloader</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">downloader</span> <span class="o">=</span> <span class="n">choose_downloader</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+            <span class="n">downloader</span> <span class="o">=</span> <span class="n">choose_downloader</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">progressbar</span><span class="o">=</span><span class="n">progressbar</span><span class="p">)</span>
 
         <span class="n">stream_download</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">full_path</span><span class="p">,</span> <span class="n">known_hash</span><span class="p">,</span> <span class="n">downloader</span><span class="p">,</span> <span class="n">pooch</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 
@@ -895,7 +908,7 @@
         <span class="s2">&quot;List of file names on the registry&quot;</span>
         <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">registry</span><span class="p">)</span>
 
-<div class="viewcode-block" id="Pooch.fetch"><a class="viewcode-back" href="../../api/generated/pooch.Pooch.html#pooch.Pooch.fetch">[docs]</a>    <span class="k">def</span> <span class="nf">fetch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fname</span><span class="p">,</span> <span class="n">processor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">downloader</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="Pooch.fetch"><a class="viewcode-back" href="../../api/generated/pooch.Pooch.html#pooch.Pooch.fetch">[docs]</a>    <span class="k">def</span> <span class="nf">fetch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fname</span><span class="p">,</span> <span class="n">processor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">downloader</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">progressbar</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the absolute path to a file in the local storage.</span>
 
@@ -933,6 +946,11 @@
 <span class="sd">            If not None, then a function (or callable object) that will be</span>
 <span class="sd">            called to download a given URL to a provided local file name. See</span>
 <span class="sd">            :ref:`downloaders` for details.</span>
+<span class="sd">        progressbar : bool or an arbitrary progress bar object</span>
+<span class="sd">            If True, will print a progress bar of the download to standard</span>
+<span class="sd">            error (stderr). Requires `tqdm &lt;https://github.com/tqdm/tqdm&gt;`__ to</span>
+<span class="sd">            be installed. Alternatively, an arbitrary progress bar object can</span>
+<span class="sd">            be passed. See :ref:`custom-progressbar` for details.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -961,7 +979,7 @@
             <span class="p">)</span>
 
             <span class="k">if</span> <span class="n">downloader</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-                <span class="n">downloader</span> <span class="o">=</span> <span class="n">choose_downloader</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+                <span class="n">downloader</span> <span class="o">=</span> <span class="n">choose_downloader</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">progressbar</span><span class="o">=</span><span class="n">progressbar</span><span class="p">)</span>
 
             <span class="n">stream_download</span><span class="p">(</span>
                 <span class="n">url</span><span class="p">,</span>
@@ -1180,8 +1198,8 @@
     <div class="container">
       <p>
         
-            &copy; Copyright 2021, The Pooch Developers.<br/>
-          Last updated on Oct 11, 2021.<br/>
+            &copy; Copyright 2022, The Pooch Developers.<br/>
+          Last updated on Jan 10, 2022.<br/>
       </p>
     </div>
   </footer>
